@@ -8,9 +8,9 @@ class Solution {
                 int mul = (num1.charAt(i)-'0')*(num2.charAt(j)-'0');
                 int p1=i+j;
                 int p2=i+j+1;
-                int sum = result[p2]+mul;
-                result[p1]+=sum/10;
-                result[p2]=sum%10;
+                int sum = result[p2]+mul;//adding the previous carry value
+                result[p1]+=sum/10;//storing the last digit
+                result[p2]=sum%10;//storing the carry value
             }
         }
         StringBuilder sb = new StringBuilder();
